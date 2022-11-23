@@ -15,10 +15,10 @@ public class Web_HDX_login {
       //  }
 
 
-        @FindBy(xpath = "//*[@id=\"login-form\"]/div/div[2]/div/label")
+        @FindBy(id= "username")
         public WebElement userInput;
 
-        @FindBy(xpath = "//*[@id=\"login-form\"]/div/div[4]/div[1]/label")
+        @FindBy(id = "password")
         public WebElement passwordInput;
 
         @FindBy(id = "chk-hdx-disclaimer")
