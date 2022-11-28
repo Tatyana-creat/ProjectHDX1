@@ -14,8 +14,8 @@ public class Utility_InTest extends BasePage{
 
 
         System.out.println("url = " + url);
-        System.out.println("username  = " + username);
-        System.out.println("password = " + password);
+       System.out.println("username  = " + username);
+       System.out.println("password = " + password);
 
         Driver.getDriver().navigate().to(url);
 
