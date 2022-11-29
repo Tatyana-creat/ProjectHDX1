@@ -5,7 +5,7 @@ import com.hematogenix.pages.Web_HDX_login;
 import com.hematogenix.utility.BrowserUtils;
 import org.junit.Test;
 
-public class Pom_WebOrderTest extends BasePage {
+public class Pom_WebOrderTest extends BasePage{
 
 
     @Test
@@ -15,9 +15,13 @@ public class Pom_WebOrderTest extends BasePage {
 
 
 
-        login.login("TElliott","Tatyana_123");
+
+            login.login("TElliott", "Tatyana_123");
 
 
 
-    }
-}
+
+        }
+
+
+        }

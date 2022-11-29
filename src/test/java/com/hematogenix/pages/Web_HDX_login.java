@@ -2,17 +2,15 @@ package com.hematogenix.pages;
 
 import com.hematogenix.utility.ConfigurationReader;
 import com.hematogenix.utility.Driver;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class Web_HDX_login {
 
    // public Web_HDX_login() {
-      //   PageFactory.initElements(Driver.getDriver(), this);
-      //  }
+        // PageFactory.initElements(Driver.getDriver(), this);
+     //  }
 
 
         @FindBy(id= "username")
@@ -29,9 +27,6 @@ public class Web_HDX_login {
 
 
 
-    public Web_HDX_login() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     public void togo(){
         Driver.getDriver().get("https://hdx-test.hematogenix.com/Home/Login");
