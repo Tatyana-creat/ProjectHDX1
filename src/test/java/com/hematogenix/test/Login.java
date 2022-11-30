@@ -3,19 +3,21 @@ package com.hematogenix.test;
 import com.hematogenix.utility.BrowserUtils;
 import com.hematogenix.utility.ConfigurationReader;
 import com.hematogenix.utility.WebDriverFactory;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
+
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Login  extends BrowserUtils{
+public class Login {
     WebDriver driver;
 
-    @BeforeMethod
+    @Before
     public void setUp(){
         driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
@@ -24,7 +26,7 @@ public class Login  extends BrowserUtils{
         driver.get(ConfigurationReader.getProperty("url"));
     }
 
-    @AfterMethod
+    @After
     public void tearDown(){
         BrowserUtils.sleep(10);
         driver.close();
