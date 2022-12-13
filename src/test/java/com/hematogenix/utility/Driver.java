@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import  org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +29,7 @@ public class Driver  {
      */
     public static WebDriver getDriver(){
 
+
         if (driverPool.get() == null){
 
             /*
@@ -41,8 +43,14 @@ public class Driver  {
                 Depending on the browserType that will be return from configuration.properties file
                 switch statement will determine the case, and open the matching browser
             */
+
             switch (browserType){
-                case "Edge":
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    driverPool.set( new EdgeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
@@ -54,6 +62,7 @@ public class Driver  {
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
+
 
             }
         }

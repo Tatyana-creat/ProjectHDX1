@@ -6,12 +6,14 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before
+    @BeforeMethod
     public void setup(){
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
@@ -20,7 +22,7 @@ public class Hooks {
 
 
     }
-    @After
+    @AfterMethod
     public void teardown(Scenario scenario){
         //I want to take a screenshot when current scenario fails
         //scenario.isFailed ()---tells if scenario failed or not

@@ -20,7 +20,8 @@ import org.junit.runner.RunWith;
             features = "src/test/resources/features",
             glue = "step_definitions",
             tags = "@wip",
-            dryRun = true
+            dryRun = false,
+            publish = true
 
 
     )

@@ -3,14 +3,16 @@ package com.hematogenix.test;
 import com.hematogenix.utility.BrowserUtils;
 import com.hematogenix.utility.ConfigurationReader;
 import com.hematogenix.utility.WebDriverFactory;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-import org.testng.annotations.Test;
+import java.util.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,6 +33,7 @@ public class Login {
         BrowserUtils.sleep(10);
         driver.close();
     }
+
 
     @Test
     public void login_with_with_login_btn(){
